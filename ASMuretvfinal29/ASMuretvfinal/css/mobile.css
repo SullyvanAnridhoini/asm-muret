@@ -1,0 +1,671 @@
+/* ============================================================
+   MOBILE.CSS — max-width: 768px
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  /* ── HEADER ─────────────────────────────────────────────── */
+
+  .container .left,
+  .container .right {
+    display: none;
+  }
+
+  .container {
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 64px;
+  }
+
+  .logo img {
+    transform: none;
+    scale: 1;
+    width: 48px;
+    display: block;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #1B3A5C;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .wraper,
+  .wraper2 {
+    position: fixed;
+  }
+
+  /* ── MENU MOBILE ─────────────────────────────────────────── */
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #EDF1F5;
+    z-index: 999;
+    flex-direction: column;
+    padding: 24px 20px;
+    gap: 0;
+    overflow-y: auto;
+  }
+
+  .mobile-menu.open {
+    display: flex;
+  }
+
+  .mobile-menu a,
+  .mobile-menu .mob-section-title {
+    display: block;
+    color: #1B3A5C;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(27, 58, 92, 0.1);
+  }
+
+  .mobile-menu .mob-section-title {
+    font-weight: 600;
+    color: #C9A84C;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-top: 20px;
+    border-bottom: none;
+  }
+
+  .mobile-menu a.mob-sub {
+    font-size: 15px;
+    padding-left: 16px;
+    color: #1B3A5C;
+    opacity: 0.85;
+  }
+
+  /* ── CONTENU GÉNÉRAL ─────────────────────────────────────── */
+
+  .content {
+    position: relative;
+    padding-top: 64px;
+  }
+
+  .background-image {
+    width: 100%;
+    height: 60vw;
+    min-height: 260px;
+    max-height: 380px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .centered {
+    font-size: 5vw;
+    top: 55%;
+    left: 4%;
+  }
+
+  .centered1 {
+    font-size: 4.5vw;
+    top: 48%;
+    left: 4%;
+  }
+
+  .btn-rejoindre {
+    font-size: 13px;
+    padding: 10px 18px;
+    top: auto;
+    bottom: 8%;
+    left: 4%;
+  }
+
+  .info {
+    margin: 0 12px;
+    padding: 24px 20px;
+    margin-top: 16px;
+  }
+
+  .info2 {
+    margin: 80px 12px 0;
+    padding: 20px 20px;
+  }
+
+  .info3 {
+    margin: 16px 12px;
+    padding: 12px 16px;
+  }
+
+  /* ── CARD-TARIF3 (Actualités) ────────────────────────────── */
+
+.card-tarif3 {
+  position: relative !important;
+  min-height: 0 !important;
+  height: auto !important;
+  display: block !important;
+  padding-top: 220px !important;
+}
+
+.background-image3 {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 200px !important;
+  object-fit: cover !important;
+}
+
+  .competition-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 12px 4px;
+  }
+
+
+.card-tarif3 .Competition,
+.card-tarif3 .Competition2 {
+  position: static !important;
+  display: inline !important;
+  top: auto !important;
+  left: auto !important;
+  margin: 12px 6px 4px 12px !important;
+}
+
+.card-tarif3 .date_competition {
+  position: static !important;
+  display: inline !important;
+  top: auto !important;
+  left: auto !important;
+}
+  .card-tarif3 .actualites1,
+  .card-tarif3 .actualites2,
+  .card-tarif3 .actualites3 {
+    position: static !important;
+    display: block !important;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 8px 12px;
+    text-shadow: none;
+  }
+
+  .card-tarif3 .separateur2,
+  .card-tarif3 .separateur3,
+  .card-tarif3 .separateursec2 {
+    position: static !important;
+    display: block;
+    width: calc(100% - 24px);
+    margin: 10px 12px;
+  }
+
+  .card-tarif3 .equipes,
+  .card-tarif3 .equipes2,
+  .card-tarif3 .encadrement {
+    position: static !important;
+    display: block;
+    font-size: 13px;
+    margin: 8px 12px 4px;
+  }
+
+  .card-tarif3 .prog-row,
+  .card-tarif3 .prog-row2,
+  .card-tarif3 .prog-rowac2 {
+    position: static !important;
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 4px 12px 16px;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  /* ── AUTRES CARDS ────────────────────────────────────────── */
+
+  .Containertarif {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .card-tarif {
+    width: calc(100% - 0px) !important;
+    margin-top: 0 !important;
+    border-radius: 12px !important;
+  }
+
+  .ol.list1,
+  ol.list1 {
+    margin: 0 !important;
+  }
+
+  .card-tarif2 {
+    width: calc(100% - 0px) !important;
+    min-height: 300px !important;
+    margin: 0 !important;
+    border-radius: 12px !important;
+  }
+
+  /* ── CONTACTS ────────────────────────────────────────────── */
+
+  .Containercontacts {
+    padding: 20px 12px 12px !important;
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-contacts {
+    width: calc(100% - 40px) !important;
+    margin-top: 0 !important;
+    border-radius: 12px !important;
+  }
+
+  .contact-title2, .contact-title3, .contact-title4,
+  .contact-title5, .contact-title6, .contact-title7,
+  .contact-title8, .contact-title9, .contact-title10,
+  .contact-title11, .contact-title12, .contact-title13,
+  .contact-title14, .contact-title20, .contact-title21,
+  .contact-title22, .contact-title23, .contact-title30,
+  .contact-title31, .contact-title32, .contact-title33,
+  .contact-title34, .contact-title35, .contact-title36 {
+    margin-left: 0 !important;
+    text-align: center;
+  }
+
+  .prog-rowcontacts,
+  .prog-rowcontacts2 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    display: flex;
+    flex-direction: column !important;
+    gap: 16px;
+    padding: 0 16px;
+    width: 100%;
+  }
+
+  .infoconctacts2 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    text-align: center;
+    padding: 20px 16px;
+  }
+
+  .contacts3,
+  .contacts4 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    text-align: center;
+    margin: 16px 0;
+  }
+
+  .prog-tag2,
+  .prog-tag3 {
+    font-size: 30px;
+  }
+
+  .prog-tag2 img,
+  .prog-tag3 img {
+    width: 35px !important;
+    height: 35px !important;
+    object-fit: contain;
+  }
+
+  .separateur10 {
+    margin: 16px auto !important;
+    width: 80%;
+  }
+
+  .infoconctacts {
+    margin-top: 64px !important;
+    text-align: center;
+  }
+
+  /* ── ENTRAÎNEURS / EMPLOI ────────────────────────────────── */
+
+  .Containercoach {
+    padding: 80px 12px 12px;
+    gap: 16px;
+  }
+
+  .Containerenploie {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    padding: 80px 12px 24px !important;
+  }
+
+  .card-emploie {
+    margin-top: 0 !important;
+    width: 100% !important;
+  }
+
+  /* ── TABLEAUX ────────────────────────────────────────────── */
+
+  .wrapper,
+  .tableau1,
+  .tableau2,
+  .tableau3 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    grid-template-columns: 40px repeat(3, 1fr) !important;
+    font-size: 12px !important;
+  }
+
+  .wrapper > div,
+  .tableau1 > div,
+  .tableau2 > div,
+  .tableau3 > div {
+    padding: 6px 4px !important;
+    font-size: 11px !important;
+  }
+
+  /* ── ÉVÉNEMENTS ──────────────────────────────────────────── */
+
+  .card-Event {
+    margin-top: 64px;
+    width: 100%;
+    height: auto;
+  }
+
+  .background-imageevent {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  .container-textevent {
+    padding: 40px 5% !important;
+    margin: 0;
+  }
+
+  .info-event1 {
+    font-size: 22px;
+  }
+
+  .sous_titreevent {
+    font-size: 13px;
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: -20px;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: auto;
+    text-align: center;
+    margin: 0;
+  }
+
+  .tabs {
+    padding: 0 12px;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-top: 0;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .tab {
+    padding: 12px 20px;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .tab-content.active {
+    padding: 16px 12px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+
+  .infos-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .info-card {
+    padding: 14px;
+  }
+
+  .planning-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .planning-card {
+    padding: 12px;
+  }
+
+  .planning-card .time {
+    font-size: 16px;
+  }
+
+  .planning-card .label {
+    font-size: 12px;
+  }
+
+  .plan-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .plan-card img {
+    height: 160px;
+  }
+
+  .parcours-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .parcours-card img {
+    height: 100px;
+  }
+
+  .parcours-body h4 {
+    font-size: 12px;
+  }
+
+  .lightbox img {
+    max-width: 95%;
+    max-height: 85vh;
+  }
+
+  .lightbox-close {
+    top: 12px;
+    right: 16px;
+    font-size: 30px;
+  }
+
+  /* ── BOUTIQUE ────────────────────────────────────────────── */
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 12px;
+    margin: 80px auto 24px;
+  }
+
+  .card {
+    border-radius: 12px;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .img-area {
+    height: 200px;
+  }
+
+  .img-area img {
+    height: 170px;
+  }
+
+  .top-row {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .brand {
+    font-size: 10px;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+
+  .desc {
+    font-size: 11px;
+  }
+
+  .sizes {
+    gap: 4px;
+  }
+
+  .sz {
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+
+  /* ── ÉCOLE / MGS ─────────────────────────────────────────── */
+
+  .ecole-hero {
+    padding: 80px 20px 40px;
+  }
+
+  .ecole-hero h1 {
+    font-size: 26px;
+  }
+
+  .ecole-hero p {
+    font-size: 14px;
+  }
+
+  .label-section,
+  .cards-section,
+  .national-section,
+  .cta-section {
+    padding: 40px 16px;
+  }
+
+  .ecole-card {
+    max-width: 100%;
+  }
+
+  .champ-badge {
+    min-width: 140px;
+  }
+
+  /* ── TARIFS (titres) ─────────────────────────────────────── */
+
+  .title-tarif2 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  /* ── FOOTER ──────────────────────────────────────────────── */
+
+  footer {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  footer .mention,
+  footer .ligue {
+    text-align: center;
+  }
+
+}
+
+/* ============================================================
+   GRANDS ÉCRANS — min-width: 1400px
+   ============================================================ */
+
+@media (min-width: 1400px) {
+  .card-Event {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .background-imageevent {
+    width: 200% !important;
+    object-fit: cover;
+  }
+
+  .container-textevent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 50% !important;
+    margin: -80px !important;
+    width: 800px !important;
+    height: 500px !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-event1 {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .sous_titreevent {
+    max-width: 100%;
+    width: 300px;
+    margin: 10px !important;
+  }
+
+  .tabs {
+    margin-top: 0 !important;
+  }
+
+  .btns {
+    margin: -10px 0 50px !important;
+    flex-direction: row;
+  }
+}
+
+
+/* ============================================================
+   TOUS ÉCRANS — title-tarif1
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .title-tarif1 {
+    font-size: 16px;
+    padding: 70px 16px 10px;
+    text-align: center;
+  }
+}
+
+

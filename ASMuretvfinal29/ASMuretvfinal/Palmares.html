@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+</head>
+<body>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" style="font-size:48px; color:#111; cursor:pointer; line-height:1;">×</span>
+    <img id="lightbox-img" src="" alt="">
+</div>
+    <header class="container">
+        <div class="left">
+            <a href="/" class="logo"><img src="./images/logo_asm.png"></a>
+            <a href="/" class="item item-1">Accueil</a>
+            <li class="deroulant">
+                <a href="#" class="item item-2">Le club</a>
+                <ul class="sous">
+                    <li><a href="/Le_Club/Le_Bureau.html" class="text-1"> Le Bureau</a></li>
+                    <li><a href="/Le_Club/Tarifs_des_licences.html" class="text-2"> Tarifs des licences</a></li>
+                    <li><a href="/Le_Club/Tableaux_des_entraînements.html" class="text-3"> Tableaux des entraînements</a></li>
+                    <li><a href="/Le_Club/Nos_entraîneurs.html" class="text-4"> Nos entraîneurs</a></li>
+                </ul>
+            </li>
+            <a href="/Evenements.html" class="item item-3">Événements</a>
+        </div>
+        <div class="right"> 
+            <a href="./Actualites.html" class="item item-4">Actualités</a>
+            <a href="./Palmares.html" class="item item-5">Palmares</a>
+            <a href="./Boutique.html" class="item item-6">Boutique</a>
+            <a href="./Contacts_Partenaires.html" class="item item-7">Contacts & Partenaires</a>
+            <a href="./MGS.html" class="item item-7">MGS</a>
+        </div>
+    </header>
+    <div class="infopalmares">
+        <h2>
+            <span id="mon-texte"></span>Palmarès</span>
+        </h2>
+    </div>
+    <h3 class="sous_titrepalmares1">Les résultats et performances du club</h3>
+    <h4 class="sous_titrepalmares2">Résultats par équipe</h4>
+    <div class="ContainerPalmares">
+        <div class="card-Palmares">
+            <img src="./images/d2women.png" alt="background" class="background-imagepa1">
+            <h3 class="sous_titrepalmares3">Équipe féminine D2</h3>
+            <h4 class="sous_titrepalmares4">2022</h4>
+            <h3 class="sous_titrepalmares5">Finit la saison à la 3ème place en finale nationale.</h3>
+        </div>
+        <div class="card-Palmares">
+            <img src="./images/d3men.png" alt="background" class="background-imagepa1">
+            <h3 class="sous_titrepalmares3">Équipe masculine D3</h3>
+            <h4 class="sous_titrepalmares4">2022</h4>
+            <h3 class="sous_titrepalmares5">Finit 17ème pour sa première finale nationale.</h3>
+        </div>
+        <div class="card-Palmares">
+            <img src="./images/d2men.png" alt="background" class="background-imagepa1">
+            <h3 class="sous_titrepalmares3">Équipe masculine D2</h3>
+            <h4 class="sous_titrepalmares4">2026</h4>
+            <h3 class="sous_titrepalmares5">Première étape Duathlon Gravelines. Quentin Salmon 30e.</h3>
+        </div>
+    </div>
+    <h4 class="sous_titrepalmares6">Galerie podiums</h4>
+    <div class="ContainerPalmares">
+        <div class="card-Palmares2" onclick="openLightbox(this.querySelector('img').src)">
+            <img src="./images/pod1.png" alt="background" class="background-imagepa2">
+        </div>
+        <div class="card-Palmares2" onclick="openLightbox(this.querySelector('img').src)">
+            <img src="./images/pod2.png" alt="background" class="background-imagepa2">
+        </div>
+                <div class="card-Palmares2" onclick="openLightbox(this.querySelector('img').src)">
+            <img src="./images/d2women.png" alt="background" class="background-imagepa2">
+        </div>
+    </div>
+    <footer>
+        <div class="contact">
+            <small><a href="https://www.instagram.com/as_muret_triathlon/?hl=fr">Instagram</a></small><br>
+            <small><a href="https://www.facebook.com/MuretTri">Facebook</a></small><br>
+            <small>Contacts</small><br>
+        </div>
+        <div class="mention">
+            <small><a href="/mentions.html">Mentions légales</a></small><br>
+            <small><a href="https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUqCQgBEAAYDRiABDIGCAAQRRg5MgkIARAAGA0YgAQyCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQg2ODk5ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=fr&sa=X&geocode=KZsh4nc0yK4SMZTljFsz-bYi&daddr=1+Av.+d%27Europe,+31600+Muret">1 Av. d'Europe, 31600 Muret</a></small><br>
+            <small><a href="./Contacts_Partenaires.html">Contacts </a></small><br>
+        </div>
+        <div class="ligue">
+            <small><a href="https://www.triathlonoccitanie.com/">Ligue Occitanie</a></small><br>
+            <small><a href="https://www.triathlonoccitanie.com/ligue/">FFTRI</a></small>
+        </div>
+    </footer>
+    <script src="./js/mobile-menu.js"></script>
+    <script src="./js/map.js"></script>
+</body>
+</html>

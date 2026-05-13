@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+</head>
+<body>    
+    <header class="container">
+        <div class="left">
+            <a href="/" class="logo"><img src="./images/logo_asm.png"></a>
+            <a href="/" class="item item-1">Accueil</a>
+            <li class="deroulant">
+                <a href="#" class="item item-2">Le club</a>
+                <ul class="sous">
+                    <li><a href="/Le_Club/Le_Bureau.html" class="text-1"> Le Bureau</a></li>
+                    <li><a href="/Le_Club/Tarifs_des_licences.html" class="text-2"> Tarifs des licences</a></li>
+                    <li><a href="/Le_Club/Tableaux_des_entraînements.html" class="text-3"> Tableaux des entraînements</a></li>
+                    <li><a href="/Le_Club/Nos_entraîneurs.html" class="text-4"> Nos entraîneurs</a></li>
+                </ul>
+            </li>
+            <a href="/Evenements.html" class="item item-3">Événements</a>
+        </div>
+        <div class="right"> 
+            <a href="./Actualites.html" class="item item-4">Actualités</a>
+            <a href="./Palmares.html" class="item item-5">Palmares</a>
+            <a href="./Boutique.html" class="item item-6">Boutique</a>
+            <a href="./Contacts_Partenaires.html" class="item item-7">Contacts & Partenaires</a>
+            <a href="./MGS.html" class="item item-7">MGS</a>
+        </div>
+    </header>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" style="font-size:48px; color:#111; cursor:pointer; line-height:1;">×</span>
+    <img id="lightbox-img" src="" alt="">
+</div>
+  <div class="grid">
+    
+    <div class="card">
+      <div class="img-area" onclick="openLightbox(this.querySelector('img').src)">
+      <img src="./images/tee1.png" alt="Adidas tee" />
+      </div>
+      <div class="info">
+        <div class="top-row">
+          <div>
+            <div class="brand">Maillot Running</div>
+          </div>
+          <div class="price">28€</div>
+        </div>
+        <div class="divider"></div>
+        <div class="sizes">
+          <strong>Tailles</strong>
+          <span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="img-area" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./images/tee2.png" alt="Nike tee" />
+      </div>
+      <div class="info">
+        <div class="top-row">
+          <div>
+            <div class="brand">Sweat Basic</div>
+          </div>
+          <div>
+            <span class="price">36€</span>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="sizes">
+          <strong>Tailles</strong>
+          <span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="card">
+      <div class="img-area" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./images/tee3.png" alt="Puma tee" />
+      </div>
+      <div class="info">
+        <div class="top-row">
+          <div>
+            <div class="brand">Polo</div>
+          </div>
+          <div class="price">33€</div>
+        </div>
+        <div class="divider"></div>
+        <div class="sizes">
+          <strong>Tailles</strong>
+          <span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="card">
+      <div class="img-area" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./images/pant1.png" alt="Jordan tee" />
+      </div>
+      <div class="info">
+        <div class="top-row">
+          <div>
+            <div class="brand">Pantalon Technique</div>
+          </div>
+          <div class="price">28€</div>
+        </div>
+        <div class="divider"></div>
+        <div class="sizes">
+          <strong>Tailles</strong>
+          <span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img-area" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./images/pant2.png" alt="Reebok tee" />
+      </div>
+      <div class="info">
+        <div class="top-row">
+          <div>
+            <div class="brand">Pantalon Survetement</div>
+          </div>
+          <div class="price">33€</div>
+        </div>
+        <div class="divider"></div>
+        <div class="sizes">
+          <strong>Tailles</strong>
+          <span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span>
+        </div>
+      </div>
+    </div>    
+    <div class="card">
+      <div class="img-area" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./images/short1.png" alt="Off-White tee" />
+      </div>
+      <div class="info">
+        <div class="top-row">
+          <div>
+            <div class="brand">Short</div>
+          </div>
+          <div class="price">25€</div>
+        </div>
+        <div class="divider"></div>
+        <div class="sizes">
+          <strong>Tailles</strong>
+          <span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img-area" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./images/coat1.png" alt="Under Armour tee" />
+      </div>
+      <div class="info">
+        <div class="top-row">
+          <div>
+            <div class="brand">Parka</div>
+          </div>
+          <div class="price">60€</div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="sizes">
+          <strong>Tailles</strong>
+          <span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-area" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./images/coat2.png" alt="Supreme tee" />
+      </div>
+      <div class="info">
+        <div class="top-row">
+          <div>
+            <div class="brand">Parka</div>
+          </div>
+          <div class="price">60€</div>
+        </div>
+        <div class="divider"></div>
+        <div class="sizes">
+          <strong>Tailles</strong>
+          <span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="card">
+      <div class="img-area" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./images/bonnet.png" alt="Bonnet" />
+      </div>
+      <div class="info">
+        <div class="top-row">
+          <div>
+            <div class="brand">Bonnet piscine</div>
+          </div>
+          <div class="price">?€</div>
+        </div>
+        <div class="divider"></div>
+        <div class="sizes">
+          <strong>Tailles</strong>
+          <span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="card">
+      <div class="img-area" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./images/cachec.png" alt="Cache-cou" />
+      </div>
+      <div class="info">
+        <div class="top-row">
+          <div>
+            <div class="brand">Tour de Cou</div>
+          </div>
+          <div class="price">?€</div>
+        </div>
+        <div class="divider"></div>
+        <div class="sizes">
+          <strong>Tailles</strong>
+          <span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="card">
+      <div class="img-area" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./images/vest1.png" alt="Vest 1" />
+      </div>
+      <div class="info">
+        <div class="top-row">
+          <div>
+            <div class="brand">Veste Femme</div>
+          </div>
+          <div class="price">?€</div>
+        </div>
+        <div class="divider"></div>
+        <div class="sizes">
+          <strong>Tailles</strong>
+          <span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="card">
+      <div class="img-area" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./images/vest2.png" alt="Vest 2" />
+      </div>
+      <div class="info">
+        <div class="top-row">
+          <div>
+            <div class="brand">Veste Homme</div>
+          </div>
+          <div class="price">?€</div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="sizes">
+          <strong>Tailles</strong>
+          <span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="card">
+      <div class="img-area" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./images/vest3.png" alt="Vest 3" />
+      </div>
+      <div class="info">
+        <div class="top-row">
+          <div>
+            <div class="brand"> Veste vélo mi-saison</div>
+          </div>
+          <div class="price">?€</div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="sizes">
+          <strong>Tailles</strong>
+          <span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="card">
+      <div class="img-area" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./images/combi1.png" alt="Combi 1" />
+      </div>
+      <div class="info">
+        <div class="top-row">
+          <div>
+            <div class="brand">Trifonction manche longues</div>
+          </div>
+          <div class="price">?€</div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="sizes">
+          <strong>Tailles</strong>
+          <span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="card">
+      <div class="img-area" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./images/combi2.png" alt="Combi 2" />
+      </div>
+      <div class="info">
+        <div class="top-row">
+          <div>
+            <div class="brand">Trifonction D2</div>
+          </div>
+          <div class="price">?€</div>
+        </div>
+        <div class="divider"></div>
+        <div class="sizes">
+          <strong>Tailles</strong>
+          <span class="sz">XS</span><span class="sz">S</span><span class="sz">M</span><span class="sz">L</span><span class="sz">XL</span>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
+    <footer>
+        <div class="contact">
+            <small><a href="https://www.instagram.com/as_muret_triathlon/?hl=fr">Instagram</a></small><br>
+            <small><a href="https://www.facebook.com/MuretTri">Facebook</a></small><br>
+            <small><a href="./Contacts_Partenaires.html">Contacts </a></small><br>
+          </div>
+        <div class="mention">
+            <small><a href="./mentions.html">Mentions légales</a></small><br>
+          <small><a href="https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUqCQgBEAAYDRiABDIGCAAQRRg5MgkIARAAGA0YgAQyCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQg2ODk5ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=fr&sa=X&geocode=KZsh4nc0yK4SMZTljFsz-bYi&daddr=1+Av.+d%27Europe,+31600+Muret">1 Av. d'Europe, 31600 Muret</a></small><br>
+            <small>ASMuret Triathlon.Tous droits réservés.</small><br>
+        </div>
+        <div class="ligue">
+            <small><a href="https://www.triathlonoccitanie.com/">Ligue Occitanie</a></small><br>
+            <small><a href="https://www.triathlonoccitanie.com/ligue/">FFTRI</a></small>
+        </div>
+    </footer>
+    <script src="../js/mobile-menu.js"></script>
+    <script src="./js/mobile-menu.js"></script>   
+    <script src="./js/map.js"></script>
+</body>
+</html>
