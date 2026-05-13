@@ -1,10 +1,8 @@
 backend:
   name: git-gateway
   branch: main
-
 media_folder: "images"
 public_folder: "/images"
-
 collections:
   - name: "actualites"
     label: "Actualités"
@@ -13,5 +11,9 @@ collections:
     fields:
       - {label: "Titre", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Image", name: "image", widget: "image"}
-      - {label: "Contenu", name: "body", widget: "markdown"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Type (Competition / Evenement)", name: "type", widget: "select", options: ["Competition", "Evenement"]}
+      - {label: "Texte intro", name: "texte", widget: "text"}
+      - {label: "Résultats", name: "resultats", widget: "text", required: false}
+      - {label: "Équipes (séparées par virgules)", name: "equipes", widget: "string", required: false}
+      - {label: "Encadrement (séparé par virgules)", name: "encadrement", widget: "string", required: false}
