@@ -15,5 +15,5 @@ intro: |-
 resultats: ""
 equipe: []
 disciplines:
-  - Natation lac, Vélo roulant, Course rapide
+  - natation
 ---
