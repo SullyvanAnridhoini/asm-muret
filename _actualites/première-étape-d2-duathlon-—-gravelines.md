@@ -12,6 +12,6 @@ resultats: |-
   Quentin Salmon 30e
   Alexandre Bataille 32e
   Quentin Souyris 50e · Noa Zenatti 56e
-equipes: Bataille A Zenatti N Fontanié M Souyris Q Salmon Q
+equipes: Bataille A, Zenatti N, Fontanié M, Souyris Q, Salmon Q
 encadrement: Delahaye N, Crepel C, Chourreau M
 ---
