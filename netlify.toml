@@ -1,12 +1,2 @@
 [build]
   publish = "."
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[dev]
-  command = "echo 'Site statique — pas de build nécessaire'"
-
-# Active Netlify Identity + Git Gateway pour le CMS
-[template.environment]
-  NETLIFY_IDENTITY = "true"
