@@ -7,6 +7,8 @@ texte: |-
   prend le départ de la Division 2 duathlon à
   Gravelines pour la première fois au niveau national.
 resultats: |-
+  
+
   12e place au classement général
   Quentin Salmon 30e
   Alexandre Bataille 32e
