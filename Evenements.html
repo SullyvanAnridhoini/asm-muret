@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <link rel="stylesheet" href="./css/main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/mobile.css">
+    <title>Événements — ASMuret Triathlon</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/mobile.css">
 </head>
 <body>
     <header class="container">
@@ -31,20 +31,29 @@
             <a href="./MGS.html" class="item item-7">MGS</a>
         </div>
     </header>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" style="font-size:48px; color:#111; cursor:pointer; line-height:1;">×</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
     <div class="wraper"></div>
-    <div class="card-Event">
+
+    <!-- ↓ Bannière — mise à jour automatiquement par le CMS -->
+    <div class="card-Event" id="evenements-container">
         <img src="./images/affiche.png" alt="background" class="background-imageevent">
-        <div class="container-textevent"> <h2 class="info-event1">Triathlon de Muret</h2><br>
-           
+        <div class="container-textevent">
+            <h2 class="info-event1">Triathlon de Muret</h2><br>
             <p class="sous_titreevent">Demi-finale du Championnat de France Jeune.<br>
                 Épreuves Distance S Open, Swim Bike<br>
                 Run et Sélectif France Jeunes.</p><br>
-                <div class="btns">
-                    <a href="https://in.inscriptions-tiel.com/..." class="btn-primary">S'inscrire</a>
-                    <a href="https://drive.google.com/..." class="btn-secondary">📄 Règlement PDF</a>
-                </div>
+            <div class="btns">
+                <a href="https://in.inscriptions-tiel.com/..." class="btn-primary">S'inscrire</a>
+                <a href="https://drive.google.com/..." class="btn-secondary">📄 Règlement PDF</a>
             </div>
         </div>
+    </div>
+
     <div class="tabs">
         <div class="tab" onclick="showTab('triathlon', this)">
             <a href="/Evenements.html">Triathlon 22-23 Mai</a>
@@ -53,78 +62,84 @@
             <a href="/Event2.html">Duathlon 22 Mars</a>
         </div>
     </div>
+
     <div id="triathlon" class="tab-content active">
-    <p class="section-label"><br>Infos pratiques</p>
-    <div class="infos-grid">
-        <div class="info-card"><div class="icon">📍</div><h4>Lieu</h4><p>Lac des Bonnets<br>Rue Louison Bobet, 31600 Muret</p></div>
-        <div class="info-card"><div class="icon">🏊</div><h4>Epreuves</h4><p>Triathlon &amp; SwimRun Open - Samedi<br>Selectif France Jeunes - Dimanche<br>Distances XS et S</p></div>
-        <div class="info-card"><div class="icon">💶</div><h4>Tarifs</h4><p>Jeunes 6-9 : 10€<br>Jeunes 10-13 : 10€<br>Distance XS : 24€<br>Distance S : 28€</p></div>
+        <p class="section-label"><br>Infos pratiques</p>
+
+        <!-- ↓ Mis à jour automatiquement par le CMS -->
+        <div class="infos-grid">
+            <div class="info-card"><div class="icon">📍</div><h4>Lieu</h4><p>Lac des Bonnets<br>Rue Louison Bobet, 31600 Muret</p></div>
+            <div class="info-card"><div class="icon">🏊</div><h4>Epreuves</h4><p>Triathlon &amp; SwimRun Open - Samedi<br>Selectif France Jeunes - Dimanche<br>Distances XS et S</p></div>
+            <div class="info-card"><div class="icon">💶</div><h4>Tarifs</h4><p>Jeunes 6-9 : 10€<br>Jeunes 10-13 : 10€<br>Distance XS : 24€<br>Distance S : 28€</p></div>
+        </div>
+
+        <p class="section-label">Planning des courses</p>
+
+        <!-- ↓ Mis à jour automatiquement par le CMS -->
+        <div class="planning-grid">
+            <div class="planning-card"><div class="time">7H30</div><div class="label">Retrait des dossards</div><div class="cat">Epreuve 1 XS</div></div>
+            <div class="planning-card"><div class="time">8H00</div><div class="label">Entree velos en transition</div><div class="cat">Epreuve 1 XS</div></div>
+            <div class="planning-card"><div class="time">9H05</div><div class="label">Depart</div><div class="cat">Epreuve 1 XS</div></div>
+            <div class="planning-card"><div class="time">10H05</div><div class="label">Depart</div><div class="cat">Epreuve 2 S</div></div>
+            <div class="planning-card"><div class="time">11H55</div><div class="label">Depart</div><div class="cat">Epreuve 3 S - Open</div></div>
+            <div class="planning-card"><div class="time">13H00</div><div class="label">Depart enfants</div><div class="cat">6 a 9 ans</div></div>
+            <div class="planning-card"><div class="time">13H40</div><div class="label">Depart enfants</div><div class="cat">10 a 13 ans</div></div>
+            <div class="planning-card"><div class="time">12H00</div><div class="label">Remise recompenses</div><div class="cat">Epreuve 1 XS</div></div>
+            <div class="planning-card"><div class="time">15H00</div><div class="label">Remise recompenses</div><div class="cat">Enfants</div></div>
+        </div>
+
+        <p class="section-label">Plan du site</p>
+        <div class="plan-grid">
+            <div class="plan-card" onclick="openLightbox(this.querySelector('img').src)">
+                <img src="https://asmurettri.com/wp-content/uploads/2026/04/Plan-Generale-du-site-New.png" alt="Plan du site" class="background-imageevent">
+                <div class="plan-label">Plan du site - Parking, Podium, Buvette, Dossards</div>
+            </div>
+            <div class="plan-card" onclick="openLightbox(this.querySelector('img').src)">
+                <img src="https://asmurettri.com/wp-content/uploads/2026/04/Parc-a-velo-triathlon-Mai-1536x1086.png" alt="Parc à vélo">
+                <div class="plan-label">Aire de transition - Sortie d'eau, Velo, CAP</div>
+            </div>
+        </div>
+
+        <p class="section-label">Les parcours - cliquez pour agrandir</p>
+        <div class="parcours-grid">
+            <div class="parcours-card" onclick="openLightbox(this.querySelector('img').src)">
+                <img src="https://asmurettri.com/wp-content/uploads/2026/04/Capture-decran-2026-04-10-a-13.51.08.png" alt="Natation S">
+                <div class="parcours-body"><h4>Natation S</h4><p>0.75 km</p></div>
+            </div>
+            <div class="parcours-card" onclick="openLightbox(this.querySelector('img').src)">
+                <img src="https://asmurettri.com/wp-content/uploads/2026/04/Capture-decran-2026-04-10-a-13.54.25-1536x791.png" alt="Natation XS">
+                <div class="parcours-body"><h4>Natation XS</h4><p>0.40 km</p></div>
+            </div>
+            <div class="parcours-card" onclick="openLightbox(this.querySelector('img').src)">
+                <img src="https://asmurettri.com/wp-content/uploads/2026/04/Capture-decran-2026-04-10-a-14.14.01.png" alt="Vélo">
+                <div class="parcours-body"><h4>Vélo 2 tours XS et 4 tours S</h4><p>20.11 km - 4 tours</p></div>
+            </div>
+            <div class="parcours-card" onclick="openLightbox(this.querySelector('img').src)">
+                <img src="https://asmurettri.com/wp-content/uploads/2026/04/Capture-decran-2026-04-21-183105.png" alt="Course à pied">
+                <div class="parcours-body"><h4>Course a pied S</h4><p>4.80 km</p></div>
+            </div>
+        </div>
     </div>
-    <p class="section-label">Planning des courses</p>
-    <div class="planning-grid">
-        <div class="planning-card"><div class="time">7H30</div><div class="label">Retrait des dossards</div><div class="cat">Epreuve 1 XS</div></div>
-        <div class="planning-card"><div class="time">8H00</div><div class="label">Entree velos en transition</div><div class="cat">Epreuve 1 XS</div></div>
-        <div class="planning-card"><div class="time">9H05</div><div class="label">Depart</div><div class="cat">Epreuve 1 XS</div></div>
-        <div class="planning-card"><div class="time">10H05</div><div class="label">Depart</div><div class="cat">Epreuve 2 S</div></div>
-        <div class="planning-card"><div class="time">11H55</div><div class="label">Depart</div><div class="cat">Epreuve 3 S - Open</div></div>
-        <div class="planning-card"><div class="time">13H00</div><div class="label">Depart enfants</div><div class="cat">6 a 9 ans</div></div>
-        <div class="planning-card"><div class="time">13H40</div><div class="label">Depart enfants</div><div class="cat">10 a 13 ans</div></div>
-        <div class="planning-card"><div class="time">12H00</div><div class="label">Remise recompenses</div><div class="cat">Epreuve 1 XS</div></div>
-        <div class="planning-card"><div class="time">15H00</div><div class="label">Remise recompenses</div><div class="cat">Enfants</div></div>
-    </div>
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-            <span class="lightbox-close" style="font-size:48px; color:#111; cursor:pointer; line-height:1;">×</span>
-        <img id="lightbox-img" src="" alt="">
-    </div>
-    <p class="section-label">Plan du site</p>
-    <div class="plan-grid">
-        <div class="plan-card" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://asmurettri.com/wp-content/uploads/2026/04/Plan-Generale-du-site-New.png" alt="background" class="background-imageevent">
-            <div class="plan-label">Plan du site - Parking, Podium, Buvette, Dossards</div>
-        </div>
-        <div class="plan-card" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://asmurettri.com/wp-content/uploads/2026/04/Parc-a-velo-triathlon-Mai-1536x1086.png">
-            <div class="plan-label">Aire de transition - Sortie d'eau, Velo, CAP</div>
-        </div>
-    </div>
-    <p class="section-label">Les parcours - cliquez pour agrandir</p>
-    <div class="parcours-grid">
-        <div class="parcours-card" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://asmurettri.com/wp-content/uploads/2026/04/Capture-decran-2026-04-10-a-13.51.08.png">
-            <div class="parcours-body"><h4>Natation S</h4><p>0.75 km</p></div>
-        </div>
-        <div class="parcours-card" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://asmurettri.com/wp-content/uploads/2026/04/Capture-decran-2026-04-10-a-13.54.25-1536x791.png">
-            <div class="parcours-body"><h4>Natation XS</h4><p>0.40 km</p></div>
-        </div>
-        <div class="parcours-card" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://asmurettri.com/wp-content/uploads/2026/04/Capture-decran-2026-04-10-a-14.14.01.png">
-            <div class="parcours-body"><h4>Vélo 2 tours XS et 4 tours S</h4><p>20.11 km - 4 tours</p></div>
-        </div>
-        <div class="parcours-card" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://asmurettri.com/wp-content/uploads/2026/04/Capture-decran-2026-04-21-183105.png">
-            <div class="parcours-body"><h4>Course a pied S</h4><p>4.80 km</p></div>
-        </div>
-    </div>
-</div>    
+
     <footer>
         <div class="contact">
             <small><a href="https://www.instagram.com/as_muret_triathlon/?hl=fr">Instagram</a></small><br>
             <small><a href="https://www.facebook.com/MuretTri">Facebook</a></small><br>
-            <small><a href="./Contacts_Partenaires.html">Contacts </a></small><br>            
+            <small><a href="./Contacts_Partenaires.html">Contacts</a></small><br>
         </div>
         <div class="mention">
             <small><a href="./mentions.html">Mentions légales</a></small><br>
             <small><a href="https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUqCQgBEAAYDRiABDIGCAAQRRg5MgkIARAAGA0YgAQyCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQg2ODk5ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=fr&sa=X&geocode=KZsh4nc0yK4SMZTljFsz-bYi&daddr=1+Av.+d%27Europe,+31600+Muret">1 Av. d'Europe, 31600 Muret</a></small><br>
-            <small><a href="./Contacts_Partenaires.html">Contacts </a></small><br>
+            <small><a href="./Contacts_Partenaires.html">Contacts</a></small><br>
         </div>
         <div class="ligue">
             <small><a href="https://www.triathlonoccitanie.com/">Ligue Occitanie</a></small><br>
             <small><a href="https://www.triathlonoccitanie.com/ligue/">FFTRI</a></small>
         </div>
     </footer>
-    <script src="../js/mobile-menu.js"></script>
-    <script src="./js/mobile-menu.js"></script>   
+
+    <script src="./js/mobile-menu.js"></script>
     <script src="./js/map.js"></script>
+    <script src="./js/cms-loader.js"></script>
 </body>
 </html>

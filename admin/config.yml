@@ -1,19 +1,216 @@
 backend:
   name: git-gateway
   branch: main
+
+# Stockage des médias uploadés directement dans /images
 media_folder: "images"
-public_folder: "/images"
+public_folder: "./images"
+
+# Langue de l'interface
+locale: fr
+
 collections:
+
+  # ══════════════════════════════════════════
+  # ACTUALITÉS
+  # ══════════════════════════════════════════
   - name: "actualites"
-    label: "Actualités"
-    folder: "_actualites"
+    label: "📰 Actualités"
+    label_singular: "Actualité"
+    folder: "_data/actualites"
     create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    editor:
+      preview: false
+    summary: "{{type}} — {{titre}} ({{date}})"
     fields:
-      - {label: "Titre", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Type (Competition / Evenement)", name: "type", widget: "select", options: ["Competition", "Evenement"]}
-      - {label: "Texte intro", name: "texte", widget: "text"}
-      - {label: "Résultats", name: "resultats", widget: "text", required: false}
-      - {label: "Équipes (séparées par virgules)", name: "equipes", widget: "string", required: false}
-      - {label: "Encadrement (séparé par virgules)", name: "encadrement", widget: "string", required: false}
+
+      - label: "Type"
+        name: "type"
+        widget: "select"
+        options:
+          - { label: "Compétition", value: "Competition" }
+          - { label: "Événement", value: "Evenement" }
+          - { label: "Info Club", value: "Info" }
+        default: "Competition"
+
+      - label: "Date affichée"
+        name: "date"
+        widget: "string"
+        hint: "Ex: Avril 2026"
+
+      - label: "Titre"
+        name: "titre"
+        widget: "string"
+        hint: "Ex: Première étape D2 Duathlon — Gravelines"
+
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        hint: "Choisissez ou uploadez une image"
+
+      - label: "Texte d'introduction"
+        name: "intro"
+        widget: "text"
+        hint: "Paragraphe principal décrivant l'actualité"
+
+      - label: "Résultats / Infos complémentaires"
+        name: "resultats"
+        widget: "text"
+        required: false
+        hint: "Ex: 12e place au classement général — une info par ligne"
+
+      - label: "Membres de l'équipe"
+        name: "equipe"
+        widget: "list"
+        required: false
+        label_singular: "Membre"
+        field:
+          label: "Nom"
+          name: "nom"
+          widget: "string"
+          hint: "Ex: Salmon Q"
+
+      - label: "Encadrement"
+        name: "encadrement"
+        widget: "list"
+        required: false
+        label_singular: "Encadrant"
+        field:
+          label: "Nom"
+          name: "nom"
+          widget: "string"
+          hint: "Ex: Delahaye N"
+
+      - label: "Disciplines (tags)"
+        name: "disciplines"
+        widget: "list"
+        required: false
+        label_singular: "Discipline"
+        field:
+          label: "Discipline"
+          name: "nom"
+          widget: "string"
+          hint: "Ex: Natation lac"
+
+  # ══════════════════════════════════════════
+  # PALMARÈS
+  # ══════════════════════════════════════════
+  - name: "palmares"
+    label: "🏆 Palmarès"
+    label_singular: "Résultat"
+    folder: "_data/palmares"
+    create: true
+    slug: "{{annee}}-{{slug}}"
+    editor:
+      preview: false
+    summary: "{{equipe}} — {{annee}}"
+    fields:
+
+      - label: "Nom de l'équipe"
+        name: "equipe"
+        widget: "string"
+        hint: "Ex: Équipe féminine D2"
+
+      - label: "Année / Saison"
+        name: "annee"
+        widget: "string"
+        hint: "Ex: 2022"
+
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        hint: "Photo de l'équipe ou de la compétition"
+
+      - label: "Description du résultat"
+        name: "description"
+        widget: "text"
+        hint: "Ex: Finit la saison à la 3ème place en finale nationale."
+
+  # ══════════════════════════════════════════
+  # ÉVÉNEMENTS
+  # ══════════════════════════════════════════
+  - name: "evenements"
+    label: "📅 Événements"
+    label_singular: "Événement"
+    folder: "_data/evenements"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    summary: "{{nom}} — {{date}}"
+    fields:
+
+      - label: "Nom de l'événement"
+        name: "nom"
+        widget: "string"
+        hint: "Ex: Triathlon de Muret"
+
+      - label: "Date(s)"
+        name: "date"
+        widget: "string"
+        hint: "Ex: 22–23 mai 2026"
+
+      - label: "Image bannière"
+        name: "image"
+        widget: "image"
+
+      - label: "Description courte"
+        name: "description"
+        widget: "text"
+        hint: "Sous-titre affiché sur la bannière"
+
+      - label: "Lien inscription"
+        name: "lien_inscription"
+        widget: "string"
+        required: false
+        hint: "URL complète vers le formulaire d'inscription"
+
+      - label: "Lien règlement PDF"
+        name: "lien_pdf"
+        widget: "string"
+        required: false
+        hint: "URL vers le PDF du règlement (Google Drive, etc.)"
+
+      - label: "Lieu"
+        name: "lieu"
+        widget: "string"
+        hint: "Ex: Lac des Bonnets, Rue Louison Bobet, 31600 Muret"
+
+      - label: "Épreuves"
+        name: "epreuves"
+        widget: "text"
+        hint: "Ex: Triathlon Open - Samedi / Sélectif France Jeunes - Dimanche"
+
+      - label: "Tarifs"
+        name: "tarifs"
+        widget: "list"
+        label_singular: "Tarif"
+        fields:
+          - label: "Catégorie"
+            name: "categorie"
+            widget: "string"
+            hint: "Ex: Jeunes 6-9"
+          - label: "Prix"
+            name: "prix"
+            widget: "string"
+            hint: "Ex: 10€"
+
+      - label: "Planning des courses"
+        name: "planning"
+        widget: "list"
+        label_singular: "Créneau"
+        fields:
+          - label: "Heure"
+            name: "heure"
+            widget: "string"
+            hint: "Ex: 7H30"
+          - label: "Action"
+            name: "label"
+            widget: "string"
+            hint: "Ex: Retrait des dossards"
+          - label: "Catégorie / Épreuve"
+            name: "categorie"
+            widget: "string"
+            hint: "Ex: Epreuve 1 XS"
+            required: false

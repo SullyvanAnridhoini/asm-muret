@@ -1,11 +1,12 @@
-[[redirects]]
-  from = "/#invite_token=:token"
-  to = "/admin/#invite_token=:token"
-  status = 301
-  force = true
+[build]
+  publish = "."
 
-[[redirects]]
-  from = "/#recovery_token=:token"
-  to = "/admin/#recovery_token=:token"
-  status = 301
-  force = true
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[dev]
+  command = "echo 'Site statique — pas de build nécessaire'"
+
+# Active Netlify Identity + Git Gateway pour le CMS
+[template.environment]
+  NETLIFY_IDENTITY = "true"
