@@ -655,8 +655,10 @@ footer .ligue {
   padding: 3px 9px;
   color: #7ab8ff;
   border-radius: 5px;
-  display: inline-block;
-  margin-bottom: 4px;
+  margin-top: 30px;
+  position: absolute;
+  top: -20px;
+  left: 64%;
 }
 
 .Competition2 {
@@ -665,34 +667,42 @@ footer .ligue {
   padding: 3px 9px;
   color: #26d706;
   border-radius: 5px;
-  display: inline-block;
-  margin-bottom: 4px;
+  margin-top: 30px;
+  position: absolute;
+  top: -20px;
+  left: 64%;
 }
 .actualites1 {
+  position: absolute;
+  top: 18%;
+  left: 64%;
   color: #ffffff;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1;
+  text-shadow: rgb(59, 78, 127) 0px 0px 1px;
 }
 
 .actualites2 {
+  position: absolute;
+  top: 26%;
+  left: 64%;
   color: #ffffff;
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 12px;
+  font-size: 16px;
 }
 
 .actualites3 {
+  position: absolute;
+  top: 30%;
+  left: 64%;
   color: #ffffff;
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 12px;
+  font-size: 16px;
 }
 .date_competition {
   font-size: 15px;
   color: #ffffff;
-  display: inline-block;
-  margin-left: 12px;
+  position: absolute;
+  top: 14px;
+  left: 76%;
 }
 
 .titreduat{
@@ -2223,26 +2233,3 @@ a {
   margin: 10px auto 0;
 }
 
-
-.card-content-right {
-  position: absolute;
-  top: 20px;
-  left: 64%;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.card-header-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 4px;
-}
-.card-equipes {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 4px;
-}
