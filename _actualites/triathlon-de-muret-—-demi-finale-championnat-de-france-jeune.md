@@ -9,6 +9,9 @@ texte: |-
   une ambiance club forte.
   Samedi — Triathlon Open Swim Bike drafting
   Course VTT enfants
-resultats: Dimanche — Sélectif France Jeunes · Benjamins à Juniors
+
+
+  Dimanche — Sélectif France Jeunes · Benjamins à Juniors
+resultats: ""
 equipes: Natationlac, Vélo roulant ,Course rapide
 ---
