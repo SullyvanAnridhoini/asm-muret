@@ -47,7 +47,7 @@ async function loadActualites() {
         + (a.type  ? '<h2 class="' + typeClass + '">' + a.type + '</h2>' : '')
         + (dateFormatee ? '<h2 class="date_competition">' + dateFormatee + '</h2>' : '')
         + '<h1 class="' + titreClass + '">' + a.title + '</h1>'
-        + '<p class="actualites1">' + a.texte.replace(/\n/g, '<br>') + '</p><br>'
+        + '<p class="actualites1">' + a.texte.replace(/\n/g, '<br>') + '</p>'
         + (resultatsHTML ? '<p class="' + actu2Class + '">' + resultatsHTML + '</p>' : '')
         + (equipesTags ? '<hr class="' + sep1Class + '"><h2 class="' + equipesClass + '">L\'Equipe:</h2><div class="' + progRowClass + '">' + equipesTags + '</div>' : '')
         + (encadrementTags ? '<hr class="' + sep2Class + '"><h2 class="encadrement">Encadrement:</h2><div class="prog-row2">' + encadrementTags + '</div>' : '')
