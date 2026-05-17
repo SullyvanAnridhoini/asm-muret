@@ -9,49 +9,39 @@ async function loadActualites() {
       const fileRes = await fetch(file.download_url);
       const text = await fileRes.text();
       const parts = text.split(/^---$/m);
-      const frontMatter = parts[1] || '';
-      function parseField(key, fm) {
-        const blockReg = new RegExp('^' + key + ':\\s*\\|-?\\n((?:[ \\t]+.+\\n?)*)', 'm');
-        const blockMatch = fm.match(blockReg);
-        if (blockMatch) return blockMatch[1].replace(/^[ \t]+/gm, '').trimEnd();
-        const inlineReg = new RegExp('^' + key + ':\\s*(.+)$', 'm');
-        const inlineMatch = fm.match(inlineReg);
-        return inlineMatch ? inlineMatch[1].trim() : '';
+      const fm = parts[1] || '';
+      function pf(key) {
+        const b = fm.match(new RegExp('^' + key + ':\\s*\\|-?\\n((?:[ \\t]+.+\\n?)*)', 'm'));
+        if (b) return b[1].replace(/^[ \t]+/gm, '').trimEnd();
+        const i = fm.match(new RegExp('^' + key + ':\\s*(.+)$', 'm'));
+        return i ? i[1].trim() : '';
       }
-      return {
-        title:       parseField('title', frontMatter),
-        date:        parseField('date', frontMatter),
-        image:       parseField('image', frontMatter),
-        type:        parseField('type', frontMatter),
-        texte:       parseField('texte', frontMatter),
-        resultats:   parseField('resultats', frontMatter),
-        equipes:     parseField('equipes', frontMatter),
-        encadrement: parseField('encadrement', frontMatter),
-      };
+      return { title: pf('title'), date: pf('date'), image: pf('image'), type: pf('type'), texte: pf('texte'), resultats: pf('resultats'), equipes: pf('equipes'), encadrement: pf('encadrement') };
     }));
     articles.sort((a, b) => new Date(b.date) - new Date(a.date));
     articles.forEach((a, i) => {
-      const dateFormatee = a.date ? new Date(a.date).toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' }) : '';
-      const typeClass    = i % 2 === 0 ? 'Competition'  : 'Competition2';
-      const titreClass   = i % 2 === 0 ? 'titreduat'    : 'titreduat2';
-      const actu2Class   = i % 2 === 0 ? 'actualites2'  : 'actualites3';
-      const sep1Class    = i % 2 === 0 ? 'separateur2'  : 'separateursec2';
-      const sep2Class    = i % 2 === 0 ? 'separateur3'  : 'separateursec3';
-      const equipesClass = i % 2 === 0 ? 'equipes'      : 'equipes2';
-      const progRowClass = i % 2 === 0 ? 'prog-row'     : 'prog-rowac2';
-      const equipesTags = a.equipes ? a.equipes.split(',').map(e => '<span class="prog-tag">' + e.trim() + '</span>').join('\n') : '';
-      const encadrementTags = a.encadrement ? a.encadrement.split(',').map(e => '<span class="prog-tag5">' + e.trim() + '</span>').join('\n') : '';
-      const resultatsHTML = a.resultats ? a.resultats.split('\n').join('<br>') : '';
-      container.innerHTML += '<div class="card-tarif3">'
-        + (a.image ? '<img src="' + a.image + '" alt="' + a.title + '" class="background-image3">' : '')
-        + (a.type  ? '<h2 class="' + typeClass + '">' + a.type + '</h2>' : '')
-        + (dateFormatee ? '<h2 class="date_competition">' + dateFormatee + '</h2>' : '')
-        + '<h1 class="' + titreClass + '">' + a.title + '</h1>'
-        + '<p class="actualites1">' + a.texte.replace(/\n/g, '<br>') + '</p>'
-        + (resultatsHTML ? '<p class="' + actu2Class + '">' + resultatsHTML + '</p>' : '')
-        + (equipesTags ? '<hr class="' + sep1Class + '"><h2 class="' + equipesClass + '">L\'Equipe:</h2><div class="' + progRowClass + '">' + equipesTags + '</div>' : '')
-        + (encadrementTags ? '<hr class="' + sep2Class + '"><h2 class="encadrement">Encadrement:</h2><div class="prog-row2">' + encadrementTags + '</div>' : '')
-        + '</div>';
+      const df = a.date ? new Date(a.date).toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' }) : '';
+      const tc = i % 2 === 0 ? 'Competition' : 'Competition2';
+      const ac = i % 2 === 0 ? 'actualites2' : 'actualites3';
+      const ec = i % 2 === 0 ? 'equipes' : 'equipes2';
+      const pr = i % 2 === 0 ? 'prog-row' : 'prog-rowac2';
+      const etags = a.equipes ? a.equipes.split(',').map(e => '<span class="prog-tag">' + e.trim() + '</span>').join('') : '';
+      const ctags = a.encadrement ? a.encadrement.split(',').map(e => '<span class="prog-tag5">' + e.trim() + '</span>').join('') : '';
+      const rhtml = a.resultats ? a.resultats.split('\n').join('<br>') : '';
+      let html = '<div class="card-tarif3">';
+      html += a.image ? '<img src="' + a.image + '" alt="' + a.title + '" class="background-image3">' : '';
+      html += '<div class="card-content-right">';
+      html += '<div class="card-header-row">';
+      html += a.type ? '<span class="' + tc + '">' + a.type + '</span>' : '';
+      html += df ? '<span class="date_competition">' + df + '</span>' : '';
+      html += '</div>';
+      html += '<h1 class="titreduat">' + a.title + '</h1>';
+      html += '<p class="actualites1">' + a.texte.replace(/\n/g, '<br>') + '</p>';
+      html += rhtml ? '<p class="' + ac + '">' + rhtml + '</p>' : '';
+      html += etags ? '<div class="card-equipes"><span class="' + ec + '">L\'EQUIPE:</span><div class="' + pr + '">' + etags + '</div></div>' : '';
+      html += ctags ? '<div class="card-equipes"><span class="encadrement">ENCADREMENT:</span><div class="prog-row2">' + ctags + '</div></div>' : '';
+      html += '</div></div>';
+      container.innerHTML += html;
     });
   } catch(e) {
     console.error('Erreur:', e);
