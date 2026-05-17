@@ -1,6 +1,6 @@
 ---
 type: Competition
-date: 22–23 mai 2026
+date: 22–23 mai 2026cccccccc
 titre: Triathlon de Muret — Demi-finale Championnat de France Jeune
 image: images/affiche2.png
 intro: |-
