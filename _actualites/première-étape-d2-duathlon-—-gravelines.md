@@ -1,6 +1,7 @@
 ---
 title: Première étape D2 Duathlon — Gravelines
 date: 2026-05-18T01:40:00.000+02:00
+image: /images/affiche.png
 type: Competition
 texte: |-
   Une entrée historique pour le club. L'équipe hommes
