@@ -1,17 +1,12 @@
 ---
-type: Competition
-date: xcvsdbsfb
-titre: "wdvsxb fdb "
+type: Evenement
+date: dvvbfenrgnf
+titre: qsfbdgnh,thj;y;yuzgq
 image: images/affiche.png
 intro: |-
-  dsbdfndgnwcx dvngf,gfh,gh;g;ghns
-  dbqdbhndg,gfh,fh,f,ndgbwbqdbgdf
-  bdsbdfsngf
-resultats: |-
-  wvbdfngf,gh,gh,fsbv
-  cdsbndg,fh
+  qsvsfngfnwx xbdfxbndfnfs
+  vqdsbdfngfn,f
+resultats: wbdfgnfneer,tk,t
 equipe:
-  - vsnhf,g,sgfshgfjyfh,qgrshry, qgetjy
-encadrement:
-  - dsbyshdthdndkuykreyq,qgg
+  - " cxbgg,dsgqd,qgjryktze"
 ---
